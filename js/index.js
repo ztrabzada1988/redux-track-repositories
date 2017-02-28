@@ -1,4 +1,6 @@
 
+
+// to redue errors
 var ADD_REPOSITORY = 'ADD_REPOSITORY';
 export default function addRepository(repository) {
     return {
