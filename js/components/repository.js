@@ -1,9 +1,12 @@
 import Reach from 'react';
 import StarRater from './star-rater';
+import { connect } from 'react-redux';
 
 export default class Repository extends react.Component {
     changeRating: function(rating) {
-        // TODO: Change the rating
+        this.props.dispatch(
+            actions.rateRepository(this.props.repository.name, rating)
+        );
     },
 
     render: function() {
@@ -16,4 +19,6 @@ export default class Repository extends react.Component {
             </div>
         );
     }
-}
+};
+
+export const Conatiner = connect()(Repository);

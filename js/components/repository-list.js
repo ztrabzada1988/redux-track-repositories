@@ -1,10 +1,11 @@
 import React from 'react';
 import Repository from './repository';
+import { connect } from 'react-redux';
 
 export default class RepositoryList extends React.Component {
     addRepository: function() {
         const repositoryName = this.refs.repositoryName.value;
-        // TODO: Add the repository to the state
+        this.props.dispatch(actions.addRepository(repositoryName));
     },
 
     render: function() {
@@ -21,5 +22,13 @@ export default class RepositoryList extends React.Component {
                 </button>
             </div>
         );
-    }
-}
+    };
+};
+
+export default function mapStateToProps(state, props) {
+    return {
+        repositories: state
+    };
+};
+
+export const Conatiner = connect(mapStateToProps)(RepositoryList);
