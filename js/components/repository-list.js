@@ -1,7 +1,7 @@
 import React from 'react';
 import Repository from './repository';
 
-export class RepositoryList extends React.Class {
+export default class RepositoryList extends React.Component {
     addRepository: function() {
         const repositoryName = this.refs.repositoryName.value;
         // TODO: Add the repository to the state
