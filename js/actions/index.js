@@ -18,6 +18,7 @@ export default function rateRepository(repository, rating) {
     };
 };
 
+// adding api fetching
 export const FETCH_DESCRIPTION_SUCCESS = 'FETCH_DESCRIPTION_SUCCESS';
 export default function fetchDescriptionSucces(repository, description) {
     return {
